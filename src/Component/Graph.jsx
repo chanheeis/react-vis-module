@@ -1,7 +1,7 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import {FlexibleXYPlot} from 'react-vis';
-import {VerticalGridLines,HorizontalGridLines} from 'react-vis';
+import {VerticalGridLines} from 'react-vis';
 import {LineMarkSeries} from 'react-vis';
 
 //dummyDataList
@@ -25,17 +25,12 @@ const useStyles=makeStyles(theme=>({
     },
     graph:{
         width:'90%',
-        height:'90%',
+        height:'100%',
         justifySelf:'flex-end'
-    },
-    xAxisWrapper:{
-        width:'90%',
-        height:'10%',
-        minHeight:'30px'
     },
     yAxisWrapper:{
         width:'10%',
-        height:'90%',
+        height:'100%',
         minWidth:'20px',
         display:'flex',
         flexFlow:'column wrap',
@@ -72,11 +67,26 @@ const Graph = ({period}) => {
     return (
         <div className={classes.root}>
             <div className={classes.yAxisWrapper}>
-                <img src="./image/1.png" className={classes.yAxisIcon}/>
-                <img src="./image/2.png" className={classes.yAxisIcon}/>
-                <img src="./image/3.png" className={classes.yAxisIcon}/>
-                <img src="./image/4.png" className={classes.yAxisIcon}/>
-                <img src="./image/5.png" className={classes.yAxisIcon}/>
+                <img
+                    alt="Very Bad" 
+                    src="./image/1.png" 
+                    className={classes.yAxisIcon}/>
+                <img
+                    alt="Bad" 
+                    src="./image/2.png" 
+                    className={classes.yAxisIcon}/>
+                <img
+                    alt="So so" 
+                    src="./image/3.png" 
+                    className={classes.yAxisIcon}/>
+                <img
+                    alt="Good" 
+                    src="./image/4.png" 
+                    className={classes.yAxisIcon}/>
+                <img
+                    alt="Very Good" 
+                    src="./image/5.png" 
+                    className={classes.yAxisIcon}/>
             </div>
             <div className={classes.graph}>
                 <FlexibleXYPlot 
@@ -86,10 +96,10 @@ const Graph = ({period}) => {
                     <VerticalGridLines/>
                     <LineMarkSeries 
                         data={_setData()}
-                        color='#ccc'
-                        style={{
-                            strokeWidth:'3px',
-                        }}
+                        stroke='#8fc2d6'
+                        fill='#8fc2d6'
+                        strokeWidth={3}
+                        size={3}
                     />
                 </FlexibleXYPlot>
             </div>

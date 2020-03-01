@@ -1,5 +1,7 @@
 import React from 'react';
+import ReactWordCloud from 'react-wordcloud'
 import {makeStyles} from '@material-ui/core/styles';
+import words from './dummyData/words';
 
 const useStyles=makeStyles(theme=>({
     root:{
@@ -19,7 +21,9 @@ const WordCloud = () => {
     const classes=useStyles();
     return (
         <div className={classes.root}>
-            <h1>Hello World</h1>
+            <ReactWordCloud
+                words={words}
+            />
         </div>
     );
 };
