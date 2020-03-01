@@ -3,6 +3,7 @@ import React,{useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import '../node_modules/react-vis/dist/style.css'
 
+import Title from './Component/Title';
 import Graph from './Component/Graph';
 import SliderComp from './Component/SliderComp';
 import WordCloud from './Component/WordCloud';
@@ -28,6 +29,7 @@ function App() {
   }
   return (
     <div className={classes.root}>
+      <Title/>
       <Graph period={period}/>
       <WordCloud/>
       <SliderComp _setPeriod={_setPeriod}/>
