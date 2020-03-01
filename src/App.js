@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react';
+
+import {makeStyles} from '@material-ui/core/styles';
+import '../node_modules/react-vis/dist/style.css'
+
+import Graph from './Component/Graph';
+import SliderComp from './Component/SliderComp';
+import WordCloud from './Component/WordCloud';
+
+const useStyles=makeStyles(theme=>({
+  root:{
+    width:'100%',
+    display:'flex',
+    flexFlow:'row wrap',
+    justifyContent:'center',
+    height:'auto',
+    background:'#003853',
+    margin:'20px auto',
+    padding:'50px'
+  }
+}))
 
 function App() {
+  const classes=useStyles();
+  const [period,setPeriod]=useState('daily');
+  const _setPeriod=(value)=>{
+    setPeriod(value);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.root}>
+      <Graph period={period}/>
+      <WordCloud/>
+      <SliderComp _setPeriod={_setPeriod}/>
     </div>
   );
 }
