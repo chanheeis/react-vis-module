@@ -68,24 +68,24 @@ const Graph = ({period}) => {
         <div className={classes.root}>
             <div className={classes.yAxisWrapper}>
                 <img
-                    alt="Very Bad" 
-                    src="./image/1.png" 
-                    className={classes.yAxisIcon}/>
-                <img
-                    alt="Bad" 
-                    src="./image/2.png" 
-                    className={classes.yAxisIcon}/>
-                <img
-                    alt="So so" 
-                    src="./image/3.png" 
+                    alt="Very Good" 
+                    src="./image/5.png" 
                     className={classes.yAxisIcon}/>
                 <img
                     alt="Good" 
                     src="./image/4.png" 
                     className={classes.yAxisIcon}/>
                 <img
-                    alt="Very Good" 
-                    src="./image/5.png" 
+                    alt="So so" 
+                    src="./image/3.png" 
+                    className={classes.yAxisIcon}/>
+                <img
+                    alt="Bad" 
+                    src="./image/2.png" 
+                    className={classes.yAxisIcon}/>
+                <img
+                    alt="Very Bad" 
+                    src="./image/1.png" 
                     className={classes.yAxisIcon}/>
             </div>
             <div className={classes.graph}>
